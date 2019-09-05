@@ -1,9 +1,9 @@
 <?php
 
-namespace sokolnikov911\MKS;
+namespace sokolnikov911\YandexMKS;
 
 use GuzzleHttp\RequestOptions;
-use sokolnikov911\MKS\Exceptions\YandexException;
+use sokolnikov911\YandexMKS\Exceptions\YandexException;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\GuzzleException;
 

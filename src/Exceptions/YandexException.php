@@ -1,6 +1,6 @@
 <?php
 
-namespace sokolnikov911\MKS\Exceptions;
+namespace sokolnikov911\YandexMKS\Exceptions;
 
 use Exception;
 
