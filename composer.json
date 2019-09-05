@@ -7,7 +7,7 @@
     "mks",
     "php"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/sokolnikov91/yandex-mks",
   "license": "MIT",
   "authors": [
@@ -28,12 +28,12 @@
   },
   "autoload": {
     "psr-4": {
-      "sokolnikov911\\MKS\\": "src/"
+      "sokolnikov911\\YandexMKS\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "sokolnikov911\\MKS\\": "tests/"
+      "sokolnikov911\\YandexMKS\\": "tests/"
     }
   }
 }
