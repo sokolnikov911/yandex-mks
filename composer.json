@@ -1,7 +1,7 @@
 {
   "name": "sokolnikov911/yandex-mks",
   "type": "library",
-  "description": "PHP7.3 Yandex MKS API Client",
+  "description": "PHP Yandex MKS API Client",
   "keywords": [
     "yandex",
     "mks",
@@ -18,7 +18,7 @@
     }
   ],
   "require": {
-    "php": ">=7.3",
+    "php": ">=7.2",
     "ext-json": "*",
     "ext-mbstring": "*",
     "guzzlehttp/guzzle": "~6.3.3"
