@@ -54,6 +54,8 @@ class Client
      * Set claim
      *
      * @param integer $contentId Content id
+     * @param string $externalId External id
+     * @param integer $rightholderId Rightholder id
      * @param array $urlsArray Array of URLs
      * @param boolean $autoSend Send URLs
      *
@@ -62,10 +64,12 @@ class Client
      *
      * @return string Data
      */
-    public function setClaim(int $contentId, array $urlsArray, bool $autoSend = false): string
+    public function setClaim(int $contentId, string $externalId, int $rightholderId, array $urlsArray, bool $autoSend = false): string
     {
         $bodyArray = [
             'contentId' => $contentId,
+            'externalId' => $externalId,
+            'rightholderId' => $rightholderId,
             'urls' => $urlsArray,
             'autosend' => $autoSend
         ];
