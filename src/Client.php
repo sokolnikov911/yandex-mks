@@ -85,9 +85,9 @@ class Client
      *
      * @return string Data
      */
-    public function getContents(): string
+    public function getContents($page = 1, $per_page = 100): string
     {
-        return $this->getData($this->getEndpointUrl(self::ENDPOINT_GET_CONTENTS));
+        return $this->getData($this->getEndpointUrl(self::ENDPOINT_GET_CONTENTS), ['page' => $page, 'per_page' => $per_page]);
     }
 
     /**
@@ -120,15 +120,18 @@ class Client
      * Sends a request via GET
      *
      * @param string $url Full URL of end-point
+     * @param array $bodyArray Array of params for body
      *
      * @throws YandexException
      * @throws GuzzleException
      *
      * @return string Response body
      */
-    private function getData(string $url): string
+    private function getData(string $url, array $bodyArray = []): string
     {
         $this->currentHttpMethod = self::HTTP_METHOD_GET;
+
+        $url = $url . '?' . http_build_query($bodyArray);
 
         return $this->sendRequest($url);
     }
