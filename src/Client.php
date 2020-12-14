@@ -167,8 +167,8 @@ class Client
 
             $dataArray = json_decode($responseData, true);
 
-            if (!is_array($dataArray) || isset($dataArray['error'])) {
-                throw new YandexException($dataArray['error']);
+            if (!is_array($dataArray) || isset($dataArray['errors'])) {
+                throw new YandexException($dataArray['errors'][0]['detail']);
             } else throw $e;
         }
 
