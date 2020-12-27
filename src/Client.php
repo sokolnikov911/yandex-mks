@@ -163,13 +163,16 @@ class Client
             ]);
         } catch (GuzzleException $e) {
             $response = $e->getResponse();
-            $responseData = $response->getBody()->getContents();
 
-            $dataArray = json_decode($responseData, true);
+            if ($response->getBody()) {
+                $responseData = $response->getBody()->getContents();
 
-            if (!is_array($dataArray) || isset($dataArray['errors'])) {
-                throw new YandexException($dataArray['errors'][0]['detail']);
-            } else throw $e;
+                $dataArray = json_decode($responseData, true);
+
+                if (!is_array($dataArray) || isset($dataArray['errors'])) {
+                    throw new YandexException($dataArray['errors'][0]['detail']);
+                } else throw $e;
+            }
         }
 
         return $response->getBody();
