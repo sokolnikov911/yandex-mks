@@ -164,7 +164,7 @@ class Client
         } catch (GuzzleException $e) {
             $response = $e->getResponse();
 
-            if ($response->getBody()) {
+            if ($response->getBody() && $response->getBody()->getContents()) {
                 $responseData = $response->getBody()->getContents();
 
                 $dataArray = json_decode($responseData, true);
