@@ -172,7 +172,7 @@ class Client
                 if (!is_array($dataArray) || isset($dataArray['errors'])) {
                     throw new YandexException($dataArray['errors'][0]['detail']);
                 } else throw $e;
-            }
+            } else throw $e;
         }
 
         return $response->getBody();
